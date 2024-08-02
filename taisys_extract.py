@@ -81,6 +81,10 @@ try:
             st.plotly_chart(fig)
             st.plotly_chart(fig_daily_bar)
 
+            # VISUALIZING THE GRAPH FOR STATE WISE ALOCATION OF DEVICES
+            stateAllocation = data['State'].value_counts()
+            statewise_dvice_allocation =  px.area(stateAllocation, title= "Statewise On road devices")
+            st.plotly_chart(statewise_dvice_allocation)
 
 
         except Exception as e:
