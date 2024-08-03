@@ -86,7 +86,7 @@ try:
 
             # VISUALIZING THE GRAPH FOR STATE WISE ALOCATION OF DEVICES
             stateAllocation = data['State'].value_counts()
-            statewise_dvice_allocation =  px.line(stateAllocation, title= "Statewise On road devices")
+            statewise_dvice_allocation =  px.bar(stateAllocation, title= "Statewise On road devices")
             st.plotly_chart(statewise_dvice_allocation)
 
 
