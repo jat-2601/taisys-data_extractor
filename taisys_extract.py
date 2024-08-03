@@ -18,8 +18,8 @@ enabling efficient monitoring, configuration, and updates for both bootstrap and
 
 - To get started, further steps include:
 1. Uploading the latest master data: Import the latest master data for extracting the TCU devices insights.
-2. Backend processing: Instead of waiting for up to 20 seconds, consider implementing a asynchronous processing 
-mechanism that allows the user to proceed with other tasks while the backend code runs in the background.
+2. Backend processing: The 2nd step involves waiting for up to 20 seconds for the backend code to run, which will be further 
+optimized for a better user experience.
 """
 uploaded_file_ = st.file_uploader(label=" Upload the master data file ",
                                  accept_multiple_files=False,
