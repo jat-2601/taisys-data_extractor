@@ -10,7 +10,13 @@ import warnings
 warnings.filterwarnings("ignore", category=UserWarning, module='openpyxl')
 
 
-st.title("TCU 2.0 SUMMARY")
+st.title("TCU Manager: Centralized Monitoring and Management for Telematics Control Units")
+"""
+Welcome to TCU Manager, an under developement web application designed to streamline the management of Telematics Control Unit (TCU) devices 
+across the entire lifecycle. Our platform provides a comprehensive overview of TCU devices,
+enabling efficient monitoring, configuration, and updates for both bootstrap and field-deployed devices.
+
+"""
 uploaded_file_ = st.file_uploader(label=" Upload the master data file ",
                                  accept_multiple_files=False,
                                  help=" Here, upload the downloaded master data file from "
