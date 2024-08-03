@@ -6,9 +6,12 @@ import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module='openpyxl')
+
 
 st.title("TCU 2.0 SUMMARY")
-uploaded_file_ = st.file_uploader(" Upload the master data file ",
+uploaded_file_ = st.file_uploader(label=" Upload the master data file ",
                                  accept_multiple_files=False,
                                  help=" Here, upload the downloaded master data file from "
                                       "taisys portal without any changes and file format shall be .xlsx only",
@@ -16,7 +19,7 @@ uploaded_file_ = st.file_uploader(" Upload the master data file ",
 try:
     # reading the file imported
     if uploaded_file_ is not None:
-        data = pd.read_excel(uploaded_file_, dtype='object')
+        data = pd.read_excel(uploaded_file_, dtype='object', engine='openpyxl')
 
         # PRINTING THE MASTER DATA WE IMPORTED
         st.title("MASTER DATA")
@@ -83,7 +86,7 @@ try:
 
             # VISUALIZING THE GRAPH FOR STATE WISE ALOCATION OF DEVICES
             stateAllocation = data['State'].value_counts()
-            statewise_dvice_allocation =  px.area(stateAllocation, title= "Statewise On road devices")
+            statewise_dvice_allocation =  px.line(stateAllocation, title= "Statewise On road devices")
             st.plotly_chart(statewise_dvice_allocation)
 
 
