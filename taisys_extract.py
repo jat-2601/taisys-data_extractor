@@ -1,4 +1,5 @@
 # importing the required libraries
+import cudf
 %load_ext cudf.pandas
 import pandas as pd
 import numpy as np
